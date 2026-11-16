@@ -11,11 +11,16 @@ private:
     int stock;
 
 public:
+    // Constructor
     Producto(int id, QString nombre, double precio, int stock);
+
+    // Getters
     int getId() const;
     QString getNombre() const;
     double getPrecio() const;
     int getStock() const;
+
+    // Métodos de acción
     void reducirStock(int cantidad);
 };
 
