@@ -1,10 +1,14 @@
+
 #pragma once
 
 #include <QtWidgets/QMainWindow>
 #include "ui_ProyectoProgramacionArreglado.h"
 #include <vector>
 #include <utility>
+
 #include "Producto.h"
+#include "HistorialVentas.h"
+#include "Ticket.h"
 
 class ProyectoProgramacionArreglado : public QMainWindow
 {
@@ -15,15 +19,27 @@ public:
     ~ProyectoProgramacionArreglado();
 
 private slots:
-    void on_pushButton_clicked(); // Conexión automática con el botón "Añadir Producto"
+    // Botones del inventario y ventas
+    void on_pushButton_clicked();
     void on_pushButton_2_clicked();
 
-private:
-    Ui::ProyectoProgramacionArregladoClass ui;
-    std::vector<Producto> listaInventario; // Vector para almacenar los productos en memoria
-    int contadorId = 1; // ID autoincrementable para cada producto nuevo
+    // Botón de historial de ventas
+    void on_ConsultarHistorial_clicked();
 
+private:
+    // Interfaz gráfica
+    Ui::ProyectoProgramacionArregladoClass ui;
+
+    // Inventario
+    std::vector<Producto> listaInventario;
+    int contadorId = 1;
+
+    // Ventas
     double subtotalVenta = 0.0;
     double totalVenta = 0.0;
     std::vector<std::pair<Producto, int>> productosEnVenta;
+
+    // Historial de ventas y tickets (David)
+    HistorialVentas historialGeneral;
+    int contadorTickets = 1;
 };
