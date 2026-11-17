@@ -60,5 +60,11 @@
     <ClInclude Include="HistorialVentas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Transaccion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ticket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
